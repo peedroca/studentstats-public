@@ -1,0 +1,13 @@
+@import '../../../colors';
+
+.graphs-container {
+    margin-top: 20px;
+
+    .line {
+        height: 4px;
+        width: 320px;
+        background-color: $highlight;
+
+        margin-bottom: 20px;
+    }
+}

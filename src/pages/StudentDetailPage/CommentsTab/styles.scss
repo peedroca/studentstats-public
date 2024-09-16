@@ -1,0 +1,112 @@
+@import '../../../colors';
+
+.comments-container {
+    margin-top: 20px;
+
+    .line {
+        height: 4px;
+        width: 320px;
+        background-color: $highlight;
+
+        margin-bottom: 20px;
+    }
+
+    .new-comment-container {
+        text-align: end;
+
+        textarea {
+            font-size: 28px;
+            padding: 12px;
+            height: 180px;
+            width: calc(100vw - 660px);
+        }
+
+        button {
+            padding: 8px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: $highlight;
+            border: none;
+            color: $primary;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgba($color: $highlight, $alpha: 0.8);
+        }
+
+        .button {
+            padding: 8px 12px;
+            font-size: 16px;
+            margin-right: 10px;
+            background-color: #ced4da;
+            border: solid 2px #adb5bd;
+            color: #adb5bd;
+            cursor: pointer;
+        }
+    
+        .button:hover {
+            background-color: rgba($color: #adb5bd, $alpha: 0.1);
+        }
+
+        .button-solid {
+            background-color: $highlight;
+            color: $primary;
+            background-color: #a3cdf6;
+            border: solid 2px #0571dd;
+            color: #0571dd;
+        }
+
+        .button-solid:hover {
+            background-color: rgba($color: #adb5bd, $alpha: 0.8);
+        }
+    }
+
+    @media all and (max-width: 980px) {
+        .new-comment-container {
+            textarea {
+                width: 100%;
+            }
+        }
+    }
+
+    .comments {
+        margin-top: 20px;
+
+        .comment-container {
+            margin-top: 12px;
+            background-color: white;
+            padding: 12px;
+
+            .comment-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 8px;
+
+                .postedby-tags {
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+
+                    .postedBy {
+                        color: $highlight;
+                    }
+    
+                    .tag {
+                        background-color: $primary;
+                        width: 26px;
+                        height: 22px;
+                        text-align: center;
+                        align-content: center;
+
+                        border-radius: 4px;
+                        color: $highlight;
+                    }
+                }
+
+                
+            }
+        }
+    }
+}

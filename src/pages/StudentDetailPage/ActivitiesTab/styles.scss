@@ -1,0 +1,55 @@
+@import '../../../colors';
+
+.activities-container {
+    margin-top: 20px;
+    width: calc(100vw - 660px);
+
+    .line {
+        height: 4px;
+        width: 320px;
+        background-color: $highlight;
+
+        margin-bottom: 20px;
+    }
+
+    .delivery {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        cursor: pointer;
+        
+        margin-top: 12px;
+        background-color: white;
+        padding: 12px;
+
+        .icon {
+            font-size: large;
+        }
+        
+        .icon-complete {
+            color: green;
+        }
+
+        .icon-overdue {
+            color: rgb(219, 192, 53);
+        }
+
+        .icon-not-delivered {
+            color: red;
+        }
+
+        .info {
+            .title {
+                font-weight: bold;
+            }
+
+            .field {
+                margin-top: 12px;
+            }
+        }
+    }
+
+    @media all and (max-width: 980px) {
+        width: 100%;
+    }
+}
