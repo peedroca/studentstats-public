@@ -11,7 +11,7 @@ import {
 import { Link } from 'react-router-dom';
 import api from '../../../services/api';
 
-export default function StudentDetail({ data }) {
+export default function StudentDetail({ data, handleCloseProfile }) {
     const [image, setImage] = useState(null);
     const [isPreview, setIsPreview] = useState(false);
     const [showImagePaste, setShowImagePaste] = useState(false);
@@ -92,17 +92,15 @@ export default function StudentDetail({ data }) {
                             <>
                                 <Link 
                                     to={`/detail?class=${data.StudentClass}&number=${data.StudentNumber}`}
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
                                     className='link-student-detail'
                                 >
                                     <span>
                                         <i className='fa-solid fa-id-card button'></i>
                                     </span>
                                 </Link>
-                                {/* <span onClick={() => setShowImagePaste(!showImagePaste)}>
-                                    <i className={`fa-${showImagePaste ? 'regular' : 'solid'} fa-image button`}></i>
-                                </span> */}
+                                <span onClick={handleCloseProfile}>
+                                    <i className={`fa-solid fa-close button`}></i>
+                                </span>
                             </>
                             :
                             <>

@@ -5,6 +5,7 @@ import Loading from '../../components/Loading';
 import api from '../../services/api';
 import StudentTable from './StudentTable';
 import StudentDetail from './StudentDetail';
+import Header from '../../components/Header';
 
 export default function StudentPage() {
     const [data, setData] = useState(null);
@@ -41,15 +42,22 @@ export default function StudentPage() {
     if (loading) return <Loading />;
 
     return (
-        <div className='student-page'>
-            <p>{error}</p>
+        <>
+            <Header />
 
-            <StudentDetail data={studentSelected} />
-            <StudentTable
-                data={data}
-                studentSelected={studentSelected}
-                handleSelectStudent={handleSelectStudent}
-            />
-        </div>
+            <div className='student-page'>
+                <p>{error}</p>
+
+                <StudentDetail 
+                    data={studentSelected} 
+                    handleCloseProfile={() => setStudentSelected(null)}
+                />
+                <StudentTable
+                    data={data}
+                    studentSelected={studentSelected}
+                    handleSelectStudent={handleSelectStudent}
+                />
+            </div>
+        </>
     );
 }
